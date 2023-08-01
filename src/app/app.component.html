@@ -1,0 +1,154 @@
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="collapse navbar-right navbar-collapse" id="navbarText">
+      <span class="navbar-text">
+        Hello Amritesh!
+      </span>
+      <span style="color:#007AFF">Logout!</span>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <section class="Title">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="heading">
+            <h2>Operational tasks</h2>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="filters">
+            <mat-form-field>
+              <mat-label>Showing entries for</mat-label>
+              <mat-select>
+                <mat-option value="All Workshops"> All Workshops </mat-option>
+                <mat-option value="NCR-Delhi"> Delhi NCR </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Date range applied</mat-label>
+              <mat-select>
+                <mat-option value="Today">Today</mat-option>
+                <mat-option value="Yesterday">Yesterday</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="row">
+        <div class="col-lg-6">
+          <mat-card class="operationsCard">
+            <button class="cardOperations" mat-raised-button color="#E5F4F3">Operations</button>
+            <mat-card-header>
+              <mat-card-title>Workshop <br> Operations</mat-card-title>
+            </mat-card-header>
+            <mat-card-actions>
+              <button mat-button>Handover To Technician </button>
+              <button mat-button>Takeover From Technician</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+
+        <div class="col-lg-6">
+          <mat-card class="stocktransCard">
+            <button class="cardStockTrans" mat-raised-button color="#F2EAFE">Stock Transfer</button>
+            <mat-card-header>
+              <mat-card-title>Workshop <br> Stock Transfer</mat-card-title>
+            </mat-card-header>
+            <mat-card-actions>
+              <button mat-button>Request Stock Transfer</button>
+              <button mat-button>Check All Request</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="table">
+      <h3>Product Details</h3>
+      <form [formGroup]="submitForm">
+        <table class="table">
+          <thead>
+            <th *ngFor="let header of tableHeaders">
+              {{header}}
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" autocomplete="off" maxlength="2" formControlName="productId"
+                  (keypress)="numberOnly($event)"></td>
+              <td><input type="text" autocomplete="off" maxlength="10" formControlName="productName"
+                  (keypress)="alphabetOnly($event)"></td>
+              <td><input type="text" autocomplete="off" maxlength="10" formControlName="brand"
+                  (keypress)="alphabetOnly($event)"></td>
+              <td class="quantityInput">
+                <input type="text" autocomplete="off" (change)="onchangeqty($event)" placeholder="qty"
+                  formArrayName="quantity" class="form-control" maxlength="1" value="" (keypress)="numberOnly($event)">
+              </td>
+              <td><input type="text" autocomplete="off" maxlength="10" formControlName="unit"></td>
+              <td><input type="text" autocomplete="off" maxlength="10" formControlName="category"
+                  [value]="submitForm.value.productName"></td>
+              <td><input type="text" autocomplete="off" maxlength="10" formControlName="unitCost"></td>
+              <td><input type="text" autocomplete="off" maxlength="10" formControlName="totalCost" value="{{totalCost}}"
+                  readonly></td>
+              <td><input type="text" autocomplete="off" maxlength="10" formControlName="productType"></td>
+            </tr>
+            <tr>
+              <table class="additionalRows" formArrayName="quantity">
+                <tbody>
+                  <tr *ngFor="let item of serialNumDetails.controls;let i =index" [formGroupName]="i">
+                    <td>
+                      <label for="serialNum">Serial No. {{i+1}}</label>
+                      <input type="text" formControlName="serialNum" maxlength="6">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </tr>
+
+            <tr>
+              <td><input type="text" autocomplete="off" maxlength="2" formControlName="productId"
+                  (keypress)="numberOnly($event)"></td>
+              <td><input type="text" autocomplete="off" maxlength="10" formControlName="productName"
+                  (keypress)="alphabetOnly($event)"></td>
+              <td><input type="text" autocomplete="off" maxlength="15" formControlName="brand"
+                  (keypress)="alphabetOnly($event)"></td>
+              <td class="quantityInput">
+                <input type="text" autocomplete="off" (change)="onchangeqty2($event)" placeholder="qty"
+                  formArrayName="quantity2" class="form-control" maxlength="1" value="" (keypress)="numberOnly($event)">
+              </td>
+              <td><input type="text" autocomplete="off" maxlength="10" formControlName="unit"></td>
+              <td><input type="text" autocomplete="off" maxlength="10" formControlName="category"
+                  [value]="submitForm.value.productName"></td>
+              <td><input type="text" autocomplete="off" maxlength="10" formControlName="unitCost"></td>
+              <td><input type="text" autocomplete="off" maxlength="10" formControlName="totalCost"
+                  value="{{totalCost2}}" readonly></td>
+              <td><input type="text" autocomplete="off" maxlength="10" formControlName="productType"></td>
+            </tr>
+            <tr>
+              <table class="additionalRows" formArrayName="quantity2">
+                <tbody>
+                  <tr *ngFor="let item of serialNumDetails2.controls;let i =index" [formGroupName]="i">
+                    <td>
+                      <label for="serialNum">Serial No. {{i+1}}</label>
+                      <input type="text" formControlName="serialNum2" maxlength="6">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </tr>
+          </tbody>
+        </table>
+        <div class="submit" style="display: flex;justify-content: end;">
+          <button class="btn btn-primary" type="submit" (click)="submitFormDetails()">Proceed</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>

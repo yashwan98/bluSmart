@@ -1,0 +1,233 @@
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 8px 0;
+}
+
+p {
+    margin: 0;
+}
+
+.spacer {
+    flex: 1;
+}
+
+thead {
+    color: #494B4D;
+    font-size: 11px;
+    font-weight: normal !important;
+    font-family: unset;
+    background-color: #F2FAFF;
+    border: none;
+    box-shadow: none;
+}
+
+.table thead th {
+    /* border-right: 1px solid #DAE1E5; */
+    border-bottom: none;
+    border-top: none;
+}
+
+.table tbody {
+    font-size: 12px;
+}
+
+.table tbody tr {
+    background-color: #fff;
+}
+
+.table tbody td input {
+    background-color: transparent;
+    border: none;
+}
+
+.table tbody .quantityInput input {
+    height: 50%;
+    width: 50%;
+    font-size: 12px;
+    background-color: #E3EDF8;
+    padding: 4px 5px 4px 12px !important;
+}
+
+.additionalRows {
+    width: 750%;
+    background-color: #F3F4F5;
+}
+
+.additionalRows td {
+    padding: 10px 0 0 50px;
+}
+
+.additionalRows td input {
+    width: 10% !important;
+    border: none;
+    margin: 0px 0px 0px 8px;
+    background-color: #E3EDF8 !important;
+}
+
+.additionalRows tr {
+    background-color: #F3F4F5 !important;
+}
+
+body {
+    background-color: #F7F7FB !important;
+}
+
+.container-fluid {
+    width: 95%;
+}
+
+.navbar {
+    color: #24292e;
+    font-weight: 600;
+}
+
+.navbar-right {
+    justify-content: end;
+}
+
+.navbar span {
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.heading {
+    display: flex;
+    width: 50%;
+}
+
+.Title {
+    padding: 10px 0px;
+}
+
+.filters {
+    display: flex;
+    justify-content: end;
+}
+
+mat-card {
+    padding: 10px !important;
+}
+
+.operationsCard {
+    color: #009583;
+    border-bottom: 2px solid #009583;
+    box-shadow: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.operationsCard mat-card-actions button {
+    width: 98% !important;
+    padding: 2px;
+    margin: 6px !important;
+    border: 1px solid #009583;
+    font-size: 12px;
+}
+
+.operationsCard:hover {
+    color: #fff;
+    background-color: #009583;
+    border-bottom: 2px solid #009583;
+}
+
+.operationsCard:hover mat-card-actions button {
+    border: 1px solid #fff !important;
+}
+
+.operationsCard mat-card-actions button:hover{
+    color:#009583;
+    background-color: #fff;
+    box-shadow: 5px 5px rgb(73, 75, 77,0.2);
+}
+
+.cardOperations {
+    font-size: 10px;
+    color: #009583;
+    margin: 1% 45% 8%;
+    background-color: #E5F4F3;
+    border-radius: 20px;
+    box-shadow: none !important;
+}
+
+
+
+
+mat-card-header {
+    justify-content: center;
+}
+
+mat-card-header .mat-card-title {
+    text-align: center;
+}
+
+
+/* 
+.operationsCard mat-card-actions button:hover{
+    background-color: (255,255,255,0.1);    
+    color:#009583;
+
+} */
+.stocktransCard {
+    color: #8130F2;
+    border-bottom: 2px solid #8130F2;
+    box-shadow: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.stocktransCard:hover {
+    color: #fff;
+    background-color: #8130F2;
+}
+
+
+.stocktransCard:hover mat-card-actions button {
+    border: 1px solid #fff;
+}
+
+.cardStockTrans {
+    font-size: 10px;
+    color: #8130F2;
+    margin: 1% 43% 8%;
+    background-color: #F2EAFE;
+    border-radius: 20px;
+    box-shadow: none !important;
+}
+
+.stocktransCard mat-card-actions button {
+    width: 98% !important;
+    padding: 2px;
+    margin: 6px !important;
+    border: 1px solid #8130F2;
+    font-size: 12px;
+}
+
+.stocktransCard mat-card-actions button:hover{
+    color: #8130F2;
+    background-color: #fff;
+    box-shadow: 5px 5px rgb(73, 75, 77,0.2);
+    margin-right: 20px;
+}
+
+.mat-select-value {
+    color: #006dda !important;
+    padding: 0px 15px !important;
+}
+
+.mat-select-min-line {
+    color: #006DD2 !important;
+}
